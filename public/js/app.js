@@ -41663,7 +41663,8 @@ var render = function () {
               attrs: {
                 id: "memo",
                 rows: "15",
-                placeholder: "メモを入力してください",
+                placeholder:
+                  "段落ごとに「コミックタイトル+巻数」の形式で入力してください",
                 required: "",
               },
               domProps: { value: _vm.memo.comic },
@@ -42353,7 +42354,7 @@ var render = function () {
                           _c(
                             "label",
                             { staticClass: "d-block", attrs: { for: "title" } },
-                            [_vm._v("別メモ作成（20文字以内）")]
+                            [_vm._v("別メモ作成（チェックボックスオン必須）")]
                           ),
                           _vm._v(" "),
                           _c("input", {
@@ -42369,7 +42370,8 @@ var render = function () {
                             attrs: {
                               type: "text",
                               id: "title",
-                              placeholder: "タイトルを入力してください",
+                              placeholder:
+                                "20文字以内でタイトルを入力してください",
                             },
                             domProps: {
                               value: _vm.secondaryMemo.secondaryName,

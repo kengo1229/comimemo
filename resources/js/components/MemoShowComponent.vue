@@ -71,8 +71,8 @@
                           </form>
                             <form class="float-right clearfix d-none d-sm-inline" v-on:submit.prevent="makeMemo">
                                 <div class="col-sm-6 form-group mt-2 mt-sm-0 px-0 float-right">
-                                    <label for="title" class="d-block">別メモ作成（20文字以内）</label>
-                                    <input type="text" id="title" class="form-control d-inline" placeholder="タイトルを入力してください" v-model="secondaryMemo.secondaryName">
+                                    <label for="title" class="d-block">別メモ作成（チェックボックスオン必須）</label>
+                                    <input type="text" id="title" class="form-control d-inline" placeholder="20文字以内でタイトルを入力してください" v-model="secondaryMemo.secondaryName">
                                     <span class="text-danger">{{ errMessages.secondaryName }}</span>
                                     <span class="text-danger">{{ errMessage }}</span>
                                     <button type="submit" class="js-submit btn bg-white float-right border mt-3 mouseover">作成</button>

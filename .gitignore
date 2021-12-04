@@ -10,4 +10,12 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+
 メモ.txt
+*.log
+*.sqlite
+.htaccess
+/storage
+/config
+/tests
