@@ -1940,7 +1940,7 @@ __webpack_require__.r(__webpack_exports__);
     createMemo: function createMemo() {
       var _this = this;
 
-      axios.post('/api/memos/memo', this.memo).then(function (res) {
+      axios.post('/api/comimemo/memo', this.memo).then(function (res) {
         _this.$router.push({
           name: 'memo.list'
         });
@@ -1993,7 +1993,7 @@ __webpack_require__.r(__webpack_exports__);
     getMemos: function getMemos() {
       var _this = this;
 
-      axios.get('/api/memos').then(function (res) {
+      axios.get('/api/comimemo').then(function (res) {
         _this.memos = res.data;
       });
     }
@@ -2138,7 +2138,7 @@ __webpack_require__.r(__webpack_exports__);
     getMemo: function getMemo() {
       var _this = this;
 
-      axios.get('/api/memos/memo/' + this.memoId).then(function (res) {
+      axios.get('/api/comimemo/memo/' + this.memoId).then(function (res) {
         _this.memo = res.data, _this.item = res.data.memo_items;
       });
     },
@@ -2160,7 +2160,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (count > 0) {
         this.errMessage = '';
-        axios.post('/api/memos/memo/make', this.secondaryMemo).then(function (res) {
+        axios.post('/api/comimemo/memo/make', this.secondaryMemo).then(function (res) {
           _this2.$router.push({
             name: 'memo.list'
           });
@@ -2177,7 +2177,7 @@ __webpack_require__.r(__webpack_exports__);
     updateMemo: function updateMemo() {
       var _this3 = this;
 
-      axios.put('/api/memos/memo/' + this.memoId, this.memo).then(function (res) {
+      axios.put('/api/comimemo/memo/' + this.memoId, this.memo).then(function (res) {
         _this3.errMessages = {}, _this3.formFlg = false, _this3.getMemo();
       })["catch"](function (e) {
         _this3.errMessages = e.response.data;
@@ -2186,7 +2186,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteMemo: function deleteMemo() {
       var _this4 = this;
 
-      axios["delete"]('/api/memos/memo/' + this.memoId).then(function (res) {
+      axios["delete"]('/api/comimemo/memo/' + this.memoId).then(function (res) {
         _this4.$router.push({
           name: 'memo.list'
         });
@@ -2195,7 +2195,7 @@ __webpack_require__.r(__webpack_exports__);
     createMemoItem: function createMemoItem() {
       var _this5 = this;
 
-      axios.post('/api/memos/memo/' + this.memoId, this.secondaryItem).then(function (res) {
+      axios.post('/api/comimemo/memo/' + this.memoId, this.secondaryItem).then(function (res) {
         _this5.errMessages = {}, _this5.secondaryItem = {}, _this5.getMemo();
       })["catch"](function (e) {
         _this5.errMessages = e.response.data;
@@ -2204,7 +2204,7 @@ __webpack_require__.r(__webpack_exports__);
     updateMemoItem: function updateMemoItem() {
       var _this6 = this;
 
-      axios.put('/api/memos/memo/' + this.memoId + '/item', this.item).then(function (res) {
+      axios.put('/api/comimemo/memo/' + this.memoId + '/item', this.item).then(function (res) {
         _this6.errMessages = {}, _this6.readonly = true, _this6.disabled = true, _this6.getMemo();
       })["catch"](function (e) {
         _this6.errMessages = e.response.data;
@@ -2213,7 +2213,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteMemoItem: function deleteMemoItem(id) {
       var _this7 = this;
 
-      axios["delete"]('/api/memos/memo/item/' + id).then(function (res) {
+      axios["delete"]('/api/comimemo/memo/item/' + id).then(function (res) {
         _this7.getMemo();
       });
     },
@@ -60316,15 +60316,15 @@ Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: [{
-    path: '/memos',
+    path: '/comimemo',
     name: 'memo.list',
     component: _components_MemoListComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/memos/memo/create',
+    path: '/comimemo/memo/create',
     name: 'memo.create',
     component: _components_MemoCreateComponent__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '/memos/memo/:memoId',
+    path: '/comimemo/memo/:memoId',
     name: 'memo.show',
     component: _components_MemoShowComponent__WEBPACK_IMPORTED_MODULE_5__["default"],
     props: true

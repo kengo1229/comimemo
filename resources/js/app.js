@@ -21,17 +21,17 @@ const router = new VueRouter({
    mode: 'history',
    routes: [
        {
-           path: '/memos',
+           path: '/comimemo',
            name: 'memo.list',
            component: MemoListComponent
        },
        {
-           path: '/memos/memo/create',
+           path: '/comimemo/memo/create',
            name: 'memo.create',
            component: MemoCreateComponent
        },
        {
-           path: '/memos/memo/:memoId',
+           path: '/comimemo/memo/:memoId',
            name: 'memo.show',
            component: MemoShowComponent,
            props: true

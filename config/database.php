@@ -90,11 +90,12 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
+
         'sqlite_testing' => [
-           'driver'   => 'sqlite',
-           'database' => ':memory:', // SQLiteのインメモリ機能を使用
-           'prefix'   => '',
-       ],
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ],
 
     ],
 
