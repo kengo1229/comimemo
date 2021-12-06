@@ -28,7 +28,7 @@
         },
         methods: {
             getMemos() {
-                axios.get('/api/comimemo')
+                axios.get('/api/')
                     .then((res) => {
                         this.memos = res.data;
                     });

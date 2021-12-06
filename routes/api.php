@@ -15,20 +15,20 @@ use Illuminate\Http\Request;
 
 
 // メモ一覧表示
-Route::get('/comimemo', 'MemoController@index');
+Route::get('/', 'MemoController@index');
 // メモ新規作成
-Route::post('/comimemo/memo','MemoController@store');
+Route::post('/memo','MemoController@store');
 // 別メモ作成
-Route::post('/comimemo/memo/make', 'MemoController@create');
+Route::post('/memo/make', 'MemoController@create');
 // メモ詳細表示
-Route::get('/comimemo/memo/{memo_id}', 'MemoController@show');
+Route::get('/memo/{memo_id}', 'MemoController@show');
 // メモ名編集
-Route::put('/comimemo/memo/{memo_id}','MemoController@update');
+Route::put('/memo/{memo_id}','MemoController@update');
 // メモ削除
-Route::delete('/comimemo/memo/{memo_id}','MemoController@destroy');
+Route::delete('/memo/{memo_id}','MemoController@destroy');
 // メモ項目追加
-Route::post('/comimemo/memo/{memo_id}','MemoItemController@store');
+Route::post('/memo/{memo_id}','MemoItemController@store');
 // メモ項目編集
-Route::put('/comimemo/memo/{memo_id}/item','MemoItemController@update');
+Route::put('/memo/{memo_id}/item','MemoItemController@update');
 // メモ項目削除
-Route::delete('/comimemo/memo/item/{item_id}','MemoItemController@destroy');
+Route::delete('/memo/item/{item_id}','MemoItemController@destroy');

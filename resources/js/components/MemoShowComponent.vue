@@ -117,7 +117,7 @@ export default {
     },
     methods: {
         getMemo() {
-            axios.get('/api/comimemo/memo/' + this.memoId)
+            axios.get('/api/memo/' + this.memoId)
                 .then((res) => {
                     this.memo = res.data,
                     this.item = res.data.memo_items;
@@ -137,7 +137,7 @@ export default {
           }
           if (count > 0) {
             this.errMessage = '';
-            axios.post('/api/comimemo/memo/make', this.secondaryMemo)
+            axios.post('/api/memo/make', this.secondaryMemo)
                   .then((res) => {
                      this.$router.push({name: 'memo.list'})
                   })
@@ -150,7 +150,7 @@ export default {
           };
         },
         updateMemo() {
-            axios.put('/api/comimemo/memo/' + this.memoId, this.memo)
+            axios.put('/api/memo/' + this.memoId, this.memo)
                   .then((res) => {
                       this.errMessages = {},
                       this.formFlg = false,
@@ -161,14 +161,14 @@ export default {
                   });
         },
         deleteMemo() {
-            axios.delete('/api/comimemo/memo/' + this.memoId)
+            axios.delete('/api/memo/' + this.memoId)
                 .then((res) => {
                     this.$router.push({name: 'memo.list'});
                 });
 
         },
         createMemoItem() {
-            axios.post('/api/comimemo/memo/' + this.memoId, this.secondaryItem)
+            axios.post('/api/memo/' + this.memoId, this.secondaryItem)
                 .then((res) => {
                   this.errMessages = {},
                   this.secondaryItem = {},
@@ -179,7 +179,7 @@ export default {
                 });
         },
         updateMemoItem() {
-            axios.put('/api/comimemo/memo/' + this.memoId + '/item', this.item)
+            axios.put('/api/memo/' + this.memoId + '/item', this.item)
                   .then((res) => {
                     this.errMessages = {},
                     this.readonly = true,
@@ -191,7 +191,7 @@ export default {
                   });
         },
         deleteMemoItem(id) {
-            axios.delete('/api/comimemo/memo/item/' + id)
+            axios.delete('/api/memo/item/' + id)
                 .then((res) => {
                     this.getMemo();
                 });

@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         createMemo() {
-            axios.post('/api/comimemo/memo', this.memo)
+            axios.post('/api/memo', this.memo)
                 .then((res) => {
                   this.$router.push({name: 'memo.list'});
                 })
