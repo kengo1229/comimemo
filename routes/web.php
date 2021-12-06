@@ -11,6 +11,6 @@
 |
 */
 //全てのURLでapp.blade.phpが表示されるようにする
-Route::get('/comimemo/{any}', function() {
+Route::get('/comimemo', function() {
      return view('app');
- })->where('any', '.*');
+ });
